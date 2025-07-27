@@ -56,6 +56,7 @@ frontend-tasks/
 │   └── index.css                   # Global styles
 ├── public/                         # Static assets
 ├── package.json                    # Dependencies and scripts
+├── netlify.toml                    # Netlify deployment config
 └── README.md                       # Project documentation
 ```
 
@@ -86,6 +87,35 @@ frontend-tasks/
    ```
    http://localhost:5173
    ```
+
+## 🌐 Deployment
+
+### Netlify Deployment (Recommended)
+
+This project is configured for easy deployment on Netlify:
+
+1. **Connect your GitHub repository** to Netlify
+2. **Build settings** (automatically detected):
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+   - **Node version:** 18
+
+3. **Deploy!** Netlify will automatically build and deploy your app
+
+### Manual Deployment
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+
+2. **Upload the `dist` folder** to your hosting provider
+
+### Other Deployment Options
+
+- **Vercel:** Connect GitHub repo, automatic deployment
+- **GitHub Pages:** Use GitHub Actions for deployment
+- **Firebase Hosting:** Use Firebase CLI for deployment
 
 ## 🎯 How to Use
 
@@ -137,10 +167,10 @@ The application is fully responsive and includes:
 ## 🔧 Customization
 
 ### Adding New Users
-To add more users to the UserCard display, modify the `sampleUsers` array in `App.jsx`:
+To add more users to the UserCard display, modify the `demoUsers` array in `App.jsx`:
 
 ```javascript
-const sampleUsers = [
+const demoUsers = [
   { name: 'John Doe', email: 'john.doe@example.com' },
   { name: 'Jane Smith', email: 'jane.smith@example.com' },
   // Add more users here
