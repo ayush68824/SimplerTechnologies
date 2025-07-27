@@ -1,0 +1,188 @@
+/* user card container */
+.user-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  width: 100%;
+  max-width: 320px;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* top accent bar */
+.user-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* hover effect */
+.user-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* avatar circle */
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.avatar-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* user information */
+.user-info {
+  margin-bottom: 20px;
+}
+
+.user-name {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.user-email {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+/* action buttons */
+.user-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* view button styling */
+.view-btn {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+.view-btn:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: translateY(-1px);
+}
+
+.view-btn.clicked {
+  background: rgba(102, 126, 234, 0.3);
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* message button styling */
+.message-btn {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+.message-btn:hover {
+  background: rgba(52, 152, 219, 0.2);
+  transform: translateY(-1px);
+}
+
+.message-btn.clicked {
+  background: rgba(52, 152, 219, 0.3);
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* icon animation */
+.action-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.action-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.action-btn.clicked svg {
+  transform: scale(0.95);
+}
+
+/* mobile responsive */
+@media (max-width: 480px) {
+  .user-card {
+    padding: 20px;
+    max-width: 280px;
+  }
+  
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .avatar-text {
+    font-size: 18px;
+  }
+  
+  .user-name {
+    font-size: 16px;
+  }
+  
+  .user-email {
+    font-size: 13px;
+  }
+  
+  .action-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* card entrance animation */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.user-card {
+  animation: cardEntrance 0.6s ease-out;
+} 
